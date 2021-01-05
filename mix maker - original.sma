@@ -22,7 +22,7 @@
 *
 *    AMX Mod X Script
 *
-*    Copyright© All rights reserved ( Federico '#8 SickneSS' Fernández )
+*    CopyrightÂ© All rights reserved ( Federico '#8 SickneSS' FernÃ¡ndez )
 *
 *    ~~~~~~~
 *    Credits
@@ -361,7 +361,16 @@ public fwdGamename()
 //====================[*Welcome Message*]===========================//
 
 public client_putinserver(id)
+{
+    set_task(1.0, "HUD", 0, _, _, "b")
     FirstSpawn[id] = true
+}
+
+public HUD()
+{
+    set_hudmessage(255, 0, 0, -1.0, 0.02, 0, 6.0, 12.0)
+    show_hudmessage(0, "CT %d | %d TT", TotalCT, TotalT )
+}
 //----------------------------------------------------------//
 public HamSpawnPlayer(id)
 {
@@ -617,6 +626,9 @@ public LogEventRoundEnd()
             
             set_pcvar_num(pRestart,1)
         }
+    
+      
+    
         
         if(Half)
         {            
@@ -2009,6 +2021,3 @@ stock ChatColor(const id, const input[], any:...)
         }
     }
 } 
-/* AMXX-Studio Notes - DO NOT MODIFY BELOW HERE
-*{\\ rtf1\\ ansi\\ deff0{\\ fonttbl{\\ f0\\ fnil Tahoma;}}\n\\ viewkind4\\ uc1\\ pard\\ lang2058\\ f0\\ fs16 \n\\ par }
-*/
